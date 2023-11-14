@@ -1,4 +1,4 @@
-namespace Inventory
+namespace App
 {
     public class WeatherForecast
     {
