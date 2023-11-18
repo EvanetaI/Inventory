@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Evaneta\\Documents\\GitHub\\Inventory\\App\\App.csproj": {}
+    "C:\\Users\\Evaneta\\documents\\github\\Inventory\\app\\App.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Evaneta\\Documents\\GitHub\\Inventory\\App\\App.csproj": {
+    "C:\\Users\\Evaneta\\documents\\github\\Inventory\\app\\App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Evaneta\\Documents\\GitHub\\Inventory\\App\\App.csproj",
+        "projectUniqueName": "C:\\Users\\Evaneta\\documents\\github\\Inventory\\app\\App.csproj",
         "projectName": "App",
-        "projectPath": "C:\\Users\\Evaneta\\Documents\\GitHub\\Inventory\\App\\App.csproj",
+        "projectPath": "C:\\Users\\Evaneta\\documents\\github\\Inventory\\app\\App.csproj",
         "packagesPath": "C:\\Users\\Evaneta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Evaneta\\Documents\\GitHub\\Inventory\\App\\obj\\",
+        "outputPath": "C:\\Users\\Evaneta\\documents\\github\\Inventory\\app\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Evaneta\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.305\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -51,10 +52,29 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.19, 6.0.19]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.19, 6.0.19]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.19, 6.0.19]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.19, 6.0.19]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -63,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
         }
       }
     }
