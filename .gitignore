@@ -6,3 +6,8 @@
 *.v2
 *.dll
 *.bin
+*.pdb
+*.json
+*.v1
+*.sqlite
+*.exe
