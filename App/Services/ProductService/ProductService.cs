@@ -23,7 +23,7 @@ namespace App.Services.ProductService
            },
            new Product()
            {
-               ProductId = 1,
+               ProductId = 2,
                Name = "Conditioner",
                Quantity = 5,
                ForSale = true,
@@ -82,26 +82,70 @@ namespace App.Services.ProductService
             }
             catch (Exception ex)
             {
-                serviceResponse.Success=false;
+                serviceResponse.Success = false;
                 serviceResponse.Message = ex.Message;
             }
 
             return serviceResponse;
         }
 
-        public Task<ServiceResponse<List<GetProductDto>>> GetAllProducts()
+        public async Task<ServiceResponse<List<GetProductDto>>> GetAllProducts()
         {
-            throw new NotImplementedException();
+            var serviceResponse = new ServiceResponse<List<GetProductDto>>();
+
+            serviceResponse.Data = productsList
+               .Select(p => _mapper.Map<GetProductDto>(p))
+               .ToList();
+
+            return serviceResponse;
         }
 
-        public Task<ServiceResponse<GetProductDto>> GetProductByName(string name)
+        public async Task<ServiceResponse<GetProductDto>> GetProductByName(string name, bool forSale)
         {
-            throw new NotImplementedException();
+            var serviceResponse = new ServiceResponse<GetProductDto>();
+
+            var product = productsList.FirstOrDefault(product => product.Name == name && product.ForSale == forSale);
+
+            if (product is null)
+            {
+                serviceResponse.Success = false;
+                serviceResponse.Message = "Product with this name not found!";
+            }
+            else
+            {
+                serviceResponse.Data = _mapper.Map<GetProductDto>(product);
+            }
+
+            return serviceResponse;
+
         }
 
-        public Task<ServiceResponse<GetProductDto>> UpdateProduct(GetProductDto updatedCharacter)
+        public async Task<ServiceResponse<GetProductDto>> UpdateProduct(GetProductDto updatedProduct)
         {
-            throw new NotImplementedException();
+            var serviceResponse = new ServiceResponse<GetProductDto>();
+
+            try
+            {
+                var product = productsList.FirstOrDefault(c => c.ProductId == updatedProduct.ProductId);
+
+                if (product is null)
+                {
+                    throw new Exception("Character witch such Id doesn't exist!");
+                }
+
+                _mapper.Map(updatedProduct, product);
+
+                serviceResponse.Data = _mapper.Map<GetProductDto>(product);
+
+            }
+            catch (Exception ex)
+            {
+                serviceResponse.Success = false;
+                serviceResponse.Message = ex.Message;
+            }
+
+            return serviceResponse;
         }
+
     }
 }

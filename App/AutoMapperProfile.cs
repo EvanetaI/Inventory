@@ -10,6 +10,7 @@ namespace App
         public AutoMapperProfile()
         {
             CreateMap<Product, GetProductDto>();
+            CreateMap<GetProductDto, Product>();
             CreateMap<AddProductDto, Product>();
         }
     }
